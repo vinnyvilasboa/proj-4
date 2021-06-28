@@ -10,7 +10,7 @@ const options = {
     secretOrKey: process.env.JWT_SECRET
 }
 
-const JWT_STRATEGY = new Strategy(options, async (jwtPayload, done) => {
+const JWT_STRATEGY = new Strategy(options, async(jwtPayload, done) => {
     // Check for a user by the id
     try {
         console.log('jwtPayload', jwtPayload);
@@ -28,6 +28,6 @@ const JWT_STRATEGY = new Strategy(options, async (jwtPayload, done) => {
 });
 
 // export a function that will use strategy
-module.exports = async (passport) => {
+module.exports = async(passport) => {
     passport.use(JWT_STRATEGY);
 }
