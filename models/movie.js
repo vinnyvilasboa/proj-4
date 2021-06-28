@@ -68,9 +68,6 @@ const movieSchema = new Schema({
     },
     Entertainment: {
         type: String
-    },
-    Youtube: {
-
     }
 });
 
