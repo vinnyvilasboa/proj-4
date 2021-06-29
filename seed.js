@@ -1,8 +1,7 @@
 // import all models
-const { movie } = require('./models');
+const { Movie } = require('./models/Index');
 
-movie.create([
-    // Jordan's Code
+Movie.create([
     {
         "Title": "The Shawshank Redemption",
         "Year": "1994",
@@ -25,7 +24,9 @@ movie.create([
         "BoxOffice": "$28,699,976",
         "Production": "Columbia Pictures, Castle Rock Entertainment",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=6hB3S9bIaco",
+        "Number": "0"
     },
     {
         "Title": "The Godfather",
@@ -51,7 +52,9 @@ movie.create([
         "BoxOffice": "$134,966,411",
         "Production": "Paramount Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=sY1S34973zA",
+        "Number": "1"
     },
     {
         "Title": "The Dark Knight",
@@ -77,7 +80,9 @@ movie.create([
         "BoxOffice": "$534,858,444",
         "Production": "Syncopy",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=EXeTwQWrcwY",
+        "Number": "2"
     },
     {
         "Title": "The Godfather: Part II",
@@ -103,7 +108,9 @@ movie.create([
         "BoxOffice": "$47,834,595",
         "Production": "Paramount Pictures, Coppola Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=8PyZCU2vpi8",
+        "Number": "3"
     },
     {
         "Title": "12 Angry Men",
@@ -129,7 +136,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Orion-Nova Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=2L4IhbF2WK0",
+        "Number": "4"
     },
     {
         "Title": "The Lord of the Rings: The Return of the King",
@@ -155,7 +164,9 @@ movie.create([
         "BoxOffice": "$377,845,905",
         "Production": "New Line Cinema, Saul Zaentz Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=r5X-hFf6Bwo",
+        "Number": "5"
     },
     {
         "Title": "Pulp Fiction",
@@ -181,7 +192,9 @@ movie.create([
         "BoxOffice": "$107,928,762",
         "Production": "A Band Apart, Miramax Films, Jersey Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=s7EdQ4FqbhY",
+        "Number": "6"
     },
     {
         "Title": "Schindler's List",
@@ -207,7 +220,9 @@ movie.create([
         "BoxOffice": "$96,898,818",
         "Production": "Universal Pictures, Amblin Entertainment",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=gG22XNhtnoY",
+        "Number": "7"
     },
     {
         "Title": "Inception",
@@ -233,7 +248,9 @@ movie.create([
         "BoxOffice": "$292,576,195",
         "Production": "Syncopy, Warner Bros.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=YoHD9XEInc0",
+        "Number": "8"
     },
     {
         "Title": "Fight Club",
@@ -259,7 +276,9 @@ movie.create([
         "BoxOffice": "$37,030,102",
         "Production": "Art Linson Productions, Fox 2000 Pictures, Taurus Film, New Regency Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=qtRKdVHc-cE",
+        "Number": "9"
     },
     {
         "Title": "The Lord of the Rings: The Fellowship of the Ring",
@@ -285,7 +304,9 @@ movie.create([
         "BoxOffice": "$315,710,750",
         "Production": "New Line Cinema, WingNut Films, Saul Zaentz Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=V75dMMIW2B4",
+        "Number": "10"
     },
     {
         "Title": "Forrest Gump",
@@ -311,7 +332,9 @@ movie.create([
         "BoxOffice": "$330,455,270",
         "Production": "Paramount Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=bLvqoHBptjg",
+        "Number": "11"
     },
     {
         "Title": "The Good, the Bad and the Ugly",
@@ -337,7 +360,9 @@ movie.create([
         "BoxOffice": "$25,100,000",
         "Production": "Produzioni Europee Associati, Constantin Film",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=WCN5JJY_wiA",
+        "Number": "12"
     },
     {
         "Title": "The Lord of the Rings: The Two Towers",
@@ -363,7 +388,9 @@ movie.create([
         "BoxOffice": "$342,551,365",
         "Production": "New Line Cinema, Saul Zaentz Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=LbfMDwc4azU",
+        "Number": "13"
     },
     {
         "Title": "The Matrix",
@@ -389,7 +416,9 @@ movie.create([
         "BoxOffice": "$171,479,930",
         "Production": "Village Roadshow Prod., Silver Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=m8e-FF8MsqU",
+        "Number": "14"
     },
     {
         "Title": "Goodfellas",
@@ -415,7 +444,9 @@ movie.create([
         "BoxOffice": "$46,836,214",
         "Production": "Warner Brothers",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=qo5jJpHtI1Y",
+        "Number": "15"
     },
     {
         "Title": "Star Wars: Episode V - The Empire Strikes Back",
@@ -441,7 +472,9 @@ movie.create([
         "BoxOffice": "$292,753,960",
         "Production": "Lucasfilm Ltd.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=mz_YWNhKOkM",
+        "Number": "16"
     },
     {
         "Title": "One Flew Over the Cuckoo's Nest",
@@ -467,10 +500,12 @@ movie.create([
         "BoxOffice": "$108,981,275",
         "Production": "Fantasy Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=OXrcDonY-B8",
+        "Number": "17"
     },
     {
-        "Title": "Gisaengchung",
+        "Title": "Parasite",
         "Year": "2019",
         "Rated": "R",
         "Released": "08 Nov 2019",
@@ -493,7 +528,9 @@ movie.create([
         "BoxOffice": "$53,369,749",
         "Production": "CJ Entertainment, TMS Entertainment",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=5xH0HfJHsaY",
+        "Number": "18"
     },
     {
         "Title": "Interstellar",
@@ -519,7 +556,9 @@ movie.create([
         "BoxOffice": "$188,020,017",
         "Production": "Lynda Obst Productions, Syncopy",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=2LqzF5WauAw",
+        "Number": "19"
     },
     {
         "Title": "City of God",
@@ -545,7 +584,9 @@ movie.create([
         "BoxOffice": "$7,564,459",
         "Production": "StudioCanal, Videofilmes Producoes Artisticas, Hank Levine Film, O2 Filmes, Lereby, Lumiere Productions, Globo Filmes, Wild Bunch",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=RfnGQetbX-U",
+        "Number": "20"
     },
     {
         "Title": "Spirited Away",
@@ -571,7 +612,9 @@ movie.create([
         "BoxOffice": "$13,750,644",
         "Production": "Walt Disney Pictures, Tokuma Shoten, Studio Ghibli",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=ByXuk9QqQkk",
+        "Number": "21"
     },
     {
         "Title": "Saving Private Ryan",
@@ -597,7 +640,9 @@ movie.create([
         "BoxOffice": "$217,049,603",
         "Production": "DreamWorks SKG, Mutual Film Company, Amblin Entertainment, Paramount Pictures, Mark Gordon Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=zwhP5b4tD6g",
+        "Number": "22"
     },
     {
         "Title": "The Green Mile",
@@ -623,9 +668,38 @@ movie.create([
         "BoxOffice": "$136,801,374",
         "Production": "Castle Rock Entertainment, Darkwoods Productions, Warner Brothers",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Ki4haFrqSrw",
+        "Number": "23"
     },
-    // Vinny's Code
+    {
+        "Title": "Life is Beautiful",
+        "Year": "1997",
+        "Rated": "PG-13",
+        "Released": "20 Dec 1997",
+        "Runtime": "116 min",
+        "Genre": "Comedy, Drama, Romance",
+        "Director": "Roberto Benigni",
+        "Writer": "Vincenzo Cerami, Roberto Benigni",
+        "Actors": "Roberto Benigni, Nicoletta Braschi, Giorgio Cantarini",
+        "Plot": "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp.",
+        "Language": "Italian, German, English",
+        "Country": "Italy",
+        "Awards": "Won 3 Oscars. 72 wins & 52 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+        "Metascore": "59",
+        "imdbRating": "8.6",
+        "imdbVotes": "637,920",
+        "imdbID": "tt0118799",
+        "Type": "movie",
+        "DVD": "25 Oct 2016",
+        "BoxOffice": "$57,563,264",
+        "Production": "Miramax, Cecchi Gori Group Tiger Cinema",
+        "Website": "N/A",
+        "Response": "True",
+        "Youtube": "https://www.youtube.com.watch?v=zqAVwCK4r2Q",
+        "Number": "24"
+    },
     {
         "Title": "Se7en",
         "Year": "1995",
@@ -650,7 +724,9 @@ movie.create([
         "BoxOffice": "$100,125,643",
         "Production": "New Line Cinema",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=znmZoVkCjpI",
+        "Number": "25"
     },
     {
         "Title": "The Silence of the Lambs",
@@ -676,7 +752,9 @@ movie.create([
         "BoxOffice": "$130,742,922",
         "Production": "Orion Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=W6Mm8Sbe__o",
+        "Number": "26"
     },
     {
         "Title": "Star Wars: Episode IV - A New Hope",
@@ -702,7 +780,9 @@ movie.create([
         "BoxOffice": "$460,998,507",
         "Production": "Lucasfilm Ltd.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=1g3_CFmnU7k",
+        "Number": "27"
     },
     {
         "Title": "Seppuku",
@@ -728,7 +808,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Shôchiku Eiga",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=pRp1tUHpWNs",
+        "Number": "28"
     },
     {
         "Title": "Pather Panchali",
@@ -754,7 +836,9 @@ movie.create([
         "BoxOffice": "$134,241",
         "Production": "Government of West Bengal",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=KQ7l3SFA0Rs",
+        "Number": "29"
     },
     {
         "Title": "Seven Samurai",
@@ -780,7 +864,9 @@ movie.create([
         "BoxOffice": "$318,649",
         "Production": "Toho Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=wJ1TOratCTo",
+        "Number": "30"
     },
     {
         "Title": "It's a Wonderful Life",
@@ -806,7 +892,9 @@ movie.create([
         "BoxOffice": "$44,000",
         "Production": "RKO Radio Pictures Inc., Liberty Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=ewe4lg8zTYA",
+        "Number": "31"
     },
     {
         "Title": "Whiplash",
@@ -832,7 +920,9 @@ movie.create([
         "BoxOffice": "$13,092,000",
         "Production": "Blumhouse, Bold Films, Right of Way Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=7d_jQycdQGo",
+        "Number": "32"
     },
     {
         "Title": "The Intouchables",
@@ -858,7 +948,9 @@ movie.create([
         "BoxOffice": "$10,198,820",
         "Production": "Chaocorp, Canal+, Gaumont, Ten Films, TF1 Films Production, Quad Productions, CinéCinéma, TF1",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=oK5hMNxqsFA",
+        "Number": "33"
     },
     {
         "Title": "The Prestige",
@@ -884,7 +976,9 @@ movie.create([
         "BoxOffice": "$53,089,891",
         "Production": "Newmarket Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=RLtaA9fFNXU",
+        "Number": "34"
     },
     {
         "Title": "The Departed",
@@ -910,7 +1004,9 @@ movie.create([
         "BoxOffice": "$132,384,315",
         "Production": "Plan B Entertainment, Warner Bros., Initial Entertainment Group, Vertigo",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=iojhqm0JTW4",
+        "Number": "35"
     },
     {
         "Title": "The Pianist",
@@ -936,7 +1032,9 @@ movie.create([
         "BoxOffice": "$32,572,577",
         "Production": "Miramax",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=BFwGqLa_oAo",
+        "Number": "36"
     },
     {
         "Title": "Gladiator",
@@ -962,7 +1060,9 @@ movie.create([
         "BoxOffice": "$187,705,427",
         "Production": "Universal Pictures, Scott Free Productions, DreamWorks Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=uvbavW31adA",
+        "Number": "37"
     },
     {
         "Title": "American History X",
@@ -988,7 +1088,9 @@ movie.create([
         "BoxOffice": "$6,719,864",
         "Production": "New Line Cinema, Turman-Morrissey Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=XfQYHqsiN5g",
+        "Number": "38"
     },
     {
         "Title": "The Usual Suspects",
@@ -1014,7 +1116,9 @@ movie.create([
         "BoxOffice": "$23,341,568",
         "Production": "Bad Hat Harry",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=oiXdPolca5w",
+        "Number": "39"
     },
     {
         "Title": "Léon: The Professional",
@@ -1040,7 +1144,9 @@ movie.create([
         "BoxOffice": "$19,501,238",
         "Production": "Gaumont, Les Films du Dauphin, Gaumont International",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=jawVxq1Iyl0",
+        "Number": "40"
     },
     {
         "Title": "The Lion King",
@@ -1066,7 +1172,9 @@ movie.create([
         "BoxOffice": "$422,783,777",
         "Production": "Walt Disney Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=lFzVJEksoDY",
+        "Number": "41"
     },
     {
         "Title": "Terminator 2: Judgment Day",
@@ -1092,7 +1200,9 @@ movie.create([
         "BoxOffice": "$205,881,154",
         "Production": "Lightstorm Entertainment, Carolco Pictures Inc., Pacific Western",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=CRRlbK5w8AE",
+        "Number": "42"
     },
     {
         "Title": "Nuovo Cinema Paradiso",
@@ -1118,7 +1228,9 @@ movie.create([
         "BoxOffice": "$12,397,210",
         "Production": "Cristaldi Film",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=C2-GX0Tltgw",
+        "Number": "43"
     },
     {
         "Title": "Hotaru no haka",
@@ -1144,7 +1256,9 @@ movie.create([
         "BoxOffice": "$516,962",
         "Production": "N/A",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=4vPeTSRd580",
+        "Number": "44"
     },
     {
         "Title": "Back to the Future",
@@ -1170,7 +1284,9 @@ movie.create([
         "BoxOffice": "$211,406,762",
         "Production": "Universal Pictures, Amblin Entertainment",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=qvsgGtivCgs",
+        "Number": "45"
     },
     {
         "Title": "Once Upon a Time in the West",
@@ -1196,7 +1312,9 @@ movie.create([
         "BoxOffice": "$5,321,508",
         "Production": "Paramount Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=c8CJ6L0I6W8",
+        "Number": "46"
     },
     {
         "Title": "Psycho",
@@ -1222,7 +1340,9 @@ movie.create([
         "BoxOffice": "$32,000,000",
         "Production": "Paramount",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Wz719b9QUqY",
+        "Number": "47"
     },
     {
         "Title": "Rear Window",
@@ -1248,7 +1368,9 @@ movie.create([
         "BoxOffice": "$36,764,313",
         "Production": "Paramount Pictures, Patron Inc.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=m01YktiEZCw",
+        "Number": "48"
     },
     {
         "Title": "Casablanca",
@@ -1274,10 +1396,10 @@ movie.create([
         "BoxOffice": "$4,108,411",
         "Production": "Warner Brothers",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=BkL9l7qovsE",
+        "Number": "49"
     },
-
-    //Brandon's Code 51-75 **add your code after casablanca and before dr. strangelove
     {
         "Title": "Modern Times",
         "Year": "1936",
@@ -1302,7 +1424,9 @@ movie.create([
         "BoxOffice": "$163,577",
         "Production": "Charles Chaplin Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=NNznUyDmSFc",
+        "Number": "50"
     },
     {
         "Title": "City Lights",
@@ -1328,7 +1452,9 @@ movie.create([
         "BoxOffice": "$19,181",
         "Production": "Charles Chaplin Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=7vl7F8S4cpQ",
+        "Number": "51"
     },
     {
         "Title": "Hamilton",
@@ -1354,7 +1480,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Walt Disney Pictures, RadicalMedia, 5000 Broadway Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=DSCKfXpAGHc",
+        "Number": "52"
     },
     {
         "Title": "Capharnaüm",
@@ -1380,7 +1508,9 @@ movie.create([
         "BoxOffice": "$1,661,096",
         "Production": "Mooz Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=ULUo0048xZE",
+        "Number": "53"
     },
     {
         "Title": "Joker",
@@ -1406,7 +1536,9 @@ movie.create([
         "BoxOffice": "$335,451,311",
         "Production": "Bron Studios, Creative Wealth Media Finance, DC Comics",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=dQw4w9WgXcQ",
+        "Number": "54"
     },
     {
         "Title": "Kimi no na wa.",
@@ -1432,7 +1564,9 @@ movie.create([
         "BoxOffice": "$5,017,246",
         "Production": "Toho Company Ltd.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=NooIc3dMncc",
+        "Number": "55"
     },
     {
         "Title": "Spider-Man: Into the Spider-Verse",
@@ -1458,7 +1592,9 @@ movie.create([
         "BoxOffice": "$190,241,310",
         "Production": "Sony Pictures Animation, Avi Arad, Pascal Pictures, Lord Miller",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=g4Hbz2jLxvQ",
+        "Number": "56"
     },
     {
         "Title": "Avengers: Endgame",
@@ -1484,7 +1620,9 @@ movie.create([
         "BoxOffice": "$858,373,000",
         "Production": "Marvel Studios, Walt Disney Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=TcMBFSGVi1c",
+        "Number": "57"
     },
     {
         "Title": "Avengers: Infinity War",
@@ -1510,7 +1648,9 @@ movie.create([
         "BoxOffice": "$678,815,482",
         "Production": "Marvel Studios",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=6ZfuNTqbHE8",
+        "Number": "58"
     },
     {
         "Title": "Coco",
@@ -1536,7 +1676,9 @@ movie.create([
         "BoxOffice": "$210,460,015",
         "Production": "Pixar Animation Studios",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Rvr68u6k5sI",
+        "Number": "59"
     },
     {
         "Title": "Django Unchained",
@@ -1562,7 +1704,9 @@ movie.create([
         "BoxOffice": "$162,805,434",
         "Production": "A Band Apart",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=0fUCuvNlOCg",
+        "Number": "60"
     },
     {
         "Title": "The Dark Knight Rises",
@@ -1588,7 +1732,9 @@ movie.create([
         "BoxOffice": "$448,139,099",
         "Production": "Syncopy",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=GokKUqLcvD8",
+        "Number": "61"
     },
     {
         "Title": "3 Idiots",
@@ -1614,7 +1760,9 @@ movie.create([
         "BoxOffice": "$6,532,874",
         "Production": "N/A",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=K0eDlFX9GMc",
+        "Number": "62"
     },
     {
         "Title": "Taare Zameen Par",
@@ -1640,7 +1788,9 @@ movie.create([
         "BoxOffice": "$1,223,869",
         "Production": "N/A",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=tn_2Ie_jtX8",
+        "Number": "63"
     },
     {
         "Title": "WALL·E",
@@ -1666,10 +1816,10 @@ movie.create([
         "BoxOffice": "$223,808,164",
         "Production": "Pixar Animation Studios",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=9pyBKj5-jVk",
+        "Number": "64"
     },
-
-    //66-75
     {
         "Title": "The Lives of Others",
         "Year": "2006",
@@ -1694,7 +1844,9 @@ movie.create([
         "BoxOffice": "$11,286,112",
         "Production": "Creado Film, Wiedemann &amp; Berg Filmproduktion, Arte, Bayerischer Rundfunk",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=YsShZNHmpGE",
+        "Number": "65"
     },
     {
         "Title": "Oldeuboi",
@@ -1720,7 +1872,9 @@ movie.create([
         "BoxOffice": "$707,481",
         "Production": "Egg Films, Show East",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=I18wDlx6WzI",
+        "Number": "66"
     },
     {
         "Title": "Memento",
@@ -1746,7 +1900,9 @@ movie.create([
         "BoxOffice": "$25,544,867",
         "Production": "Team Todd, I Remember Productions, Llc, Newmarket Capital Group",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=0vS0E9bBSL0",
+        "Number": "67"
     },
     {
         "Title": "Mononoke-hime",
@@ -1772,7 +1928,9 @@ movie.create([
         "BoxOffice": "$4,845,631",
         "Production": "Nippon Herald Films, Studio Ghibli, Dentsu",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=4OiMOHRDs14",
+        "Number": "68"
     },
     {
         "Title": "Once Upon a Time in America",
@@ -1798,7 +1956,9 @@ movie.create([
         "BoxOffice": "$5,321,508",
         "Production": "Warner Brothers, Embassy International Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=LcpCRyNo8T8",
+        "Number": "69"
     },
     {
         "Title": "Indiana Jones and the Raiders of the Lost Ark",
@@ -1824,7 +1984,9 @@ movie.create([
         "BoxOffice": "$248,159,971",
         "Production": "Paramount Pictures, Lucasfilm Ltd.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=XkkzKHCx154",
+        "Number": "70"
     },
     {
         "Title": "The Shining",
@@ -1850,7 +2012,9 @@ movie.create([
         "BoxOffice": "$45,332,952",
         "Production": "Producers Circle, Warner Brothers, Peregrine, Hawk Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=5Cb3ik6zP2I",
+        "Number": "71"
     },
     {
         "Title": "Apocalypse Now",
@@ -1876,7 +2040,9 @@ movie.create([
         "BoxOffice": "$83,471,511",
         "Production": "Zoetrope Studios",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=FTjG-Aux_yQ",
+        "Number": "72"
     },
     {
         "Title": "Alien",
@@ -1902,7 +2068,9 @@ movie.create([
         "BoxOffice": "$81,900,459",
         "Production": "Twentieth Century Fox, Brandywine Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=jQ5lPt9edzQ",
+        "Number": "73"
     },
     {
         "Title": "Tengoku to jigoku",
@@ -1928,10 +2096,10 @@ movie.create([
         "BoxOffice": "$46,808",
         "Production": "N/A",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=LV3z2Ytxu90",
+        "Number": "74"
     },
-
-    //Jake's Code 76-100
     {
         "Title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
         "Year": "1964",
@@ -1956,7 +2124,9 @@ movie.create([
         "BoxOffice": "$9,440,272",
         "Production": "Hawk Films",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=jPU1AYTxwg4",
+        "Number": "75"
     },
     {
         "Title": "Witness for the Prosecution",
@@ -1982,7 +2152,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "United Artists",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=GMlJfiA2u7Y",
+        "Number": "76"
     },
     {
         "Title": "Paths of Glory",
@@ -2008,7 +2180,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Bryna Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=AV9XLjDbt5A",
+        "Number": "77"
     },
     {
         "Title": "Sunset Blvd.",
@@ -2034,7 +2208,9 @@ movie.create([
         "BoxOffice": "$299,645",
         "Production": "Paramount Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=_dY0SVxnHjQ",
+        "Number": "78"
     },
     {
         "Title": "The Great Dictator",
@@ -2060,7 +2236,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Charles Chaplin Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=i1C6qZVeFtA",
+        "Number": "79"
     },
     {
         "Title": "The Hunt",
@@ -2086,7 +2264,9 @@ movie.create([
         "BoxOffice": "$613,308",
         "Production": "Zentropa Entertainments",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=YsYn6L5fF9Q",
+        "Number": "80"
     },
     {
         "Title": "Inglourious Basterds",
@@ -2112,7 +2292,9 @@ movie.create([
         "BoxOffice": "$120,540,719",
         "Production": "A Band Apart, Zehnte Babelsberg",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=KnrRy6kSFF0",
+        "Number": "81"
     },
     {
         "Title": "Eternal Sunshine of the Spotless Mind",
@@ -2138,7 +2320,9 @@ movie.create([
         "BoxOffice": "$34,400,301",
         "Production": "Anonymous Content, Focus Features, Blue Ruin, This Is That Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=07-QBnEkgXU",
+        "Number": "82"
     },
     {
         "Title": "Requiem for a Dream",
@@ -2164,7 +2348,9 @@ movie.create([
         "BoxOffice": "$3,635,482",
         "Production": "Thousand Words, Industry Entertainment, Truth and Soul Pictures, Bandeira Entertainment, Requiem for a Dream LLC, Artisan Entertainment, Protozoa Pictures, Sibling Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=jzk-lmU4KZ4",
+        "Number": "83"
     },
     {
         "Title": "American Beauty",
@@ -2190,7 +2376,9 @@ movie.create([
         "BoxOffice": "$130,096,601",
         "Production": "DreamWorks Pictures, Jinks/Cohen Company",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Ly7rq5EsTC8",
+        "Number": "84"
     },
     {
         "Title": "Good Will Hunting",
@@ -2216,7 +2404,9 @@ movie.create([
         "BoxOffice": "$138,433,435",
         "Production": "Miramax Films, Be Gentlemen Limited Partnership, Lawrence Bender Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=ReIJ1lbL-Q8",
+        "Number": "85"
     },
     {
         "Title": "Toy Story",
@@ -2242,7 +2432,9 @@ movie.create([
         "BoxOffice": "$223,225,679",
         "Production": "Pixar Animation Studios, Walt Disney Pictures",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=mGXHH9iAfLA",
+        "Number": "86"
     },
     {
         "Title": "Braveheart",
@@ -2268,7 +2460,9 @@ movie.create([
         "BoxOffice": "$75,609,945",
         "Production": "Icon Entertainment International, Twentieth Century Fox, Ladd Company, Paramount Pictures, B.H. Finance C.V.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=1NJO0jxBtMo",
+        "Number": "87"
     },
     {
         "Title": "Reservoir Dogs",
@@ -2294,7 +2488,9 @@ movie.create([
         "BoxOffice": "$2,832,029",
         "Production": "Live Entertainment, Dog Eat Dog Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=vayksn4Y93A",
+        "Number": "88"
     },
     {
         "Title": "Come and See",
@@ -2320,7 +2516,9 @@ movie.create([
         "BoxOffice": "$71,909",
         "Production": "N/A",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=aGdltVLfbmc",
+        "Number": "89"
     },
     {
         "Title": "Aliens",
@@ -2346,7 +2544,9 @@ movie.create([
         "BoxOffice": "$85,160,248",
         "Production": "Twentieth Century Fox, Brandywine Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=bTCaVjQ8nU4",
+        "Number": "90"
     },
     {
         "Title": "Amadeus",
@@ -2372,7 +2572,9 @@ movie.create([
         "BoxOffice": "$51,973,029",
         "Production": "AMLF",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=r7kWQj9FCGY",
+        "Number": "91"
     },
     {
         "Title": "Star Wars: Episode VI - Return of the Jedi",
@@ -2398,7 +2600,9 @@ movie.create([
         "BoxOffice": "$309,306,177",
         "Production": "Lucasfilm Ltd.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=5UfA_aKBGMc",
+        "Number": "92"
     },
     {
         "Title": "Das Boot",
@@ -2424,7 +2628,9 @@ movie.create([
         "BoxOffice": "$11,487,676",
         "Production": "Bavaria Film, Westdeutscher Rundfunk, Radiant Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=7pzKyeIex2Y",
+        "Number": "93"
     },
     {
         "Title": "2001: A Space Odyssey",
@@ -2450,7 +2656,9 @@ movie.create([
         "BoxOffice": "$60,405,931",
         "Production": "Metro Goldwyn Mayer",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Z2UWOeBcsJI",
+        "Number": "94"
     },
     {
         "Title": "North by Northwest",
@@ -2476,7 +2684,9 @@ movie.create([
         "BoxOffice": "N/A",
         "Production": "Metro Goldwyn Mayer",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=K0c2HJ4AO6o",
+        "Number": "95"
     },
     {
         "Title": "Vertigo",
@@ -2502,7 +2712,9 @@ movie.create([
         "BoxOffice": "$7,705,225",
         "Production": "Paramount Pictures, Alfred J. Hitchcock Productions",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=Z5jvQwwHQNY",
+        "Number": "96"
     },
     {
         "Title": "Singin' in the Rain",
@@ -2528,7 +2740,9 @@ movie.create([
         "BoxOffice": "$1,826,108",
         "Production": "Metro Goldwyn Mayer",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=5_EVHeNEIJY",
+        "Number": "97"
     },
     {
         "Title": "Citizen Kane",
@@ -2554,7 +2768,9 @@ movie.create([
         "BoxOffice": "$1,585,634",
         "Production": "Mercury Productions, RKO Radio Pictures Inc.",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=8dxh3lwdOFw",
+        "Number": "98"
     },
     {
         "Title": "M",
@@ -2580,7 +2796,9 @@ movie.create([
         "BoxOffice": "$35,566",
         "Production": "Nero-Film AG",
         "Website": "N/A",
-        "Response": "True"
+        "Response": "True",
+        "Youtube": "https://www.youtube.com./watch?v=FUpwMmeT4ZA",
+        "Number": "99"
     }
 ], (err, results) => {
     console.log(results);

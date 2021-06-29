@@ -4,19 +4,15 @@ const Schema = mongoose.Schema;
 const favoritesSchema = new Schema({
     Title: {
         type: String,
-
     },
     Year: {
         type: String,
-
     },
     Rated: {
         type: String,
-
     },
     Genre: {
         type: String,
-
     },
     Director: {
         type: String
@@ -75,5 +71,5 @@ const favoritesSchema = new Schema({
     }
 });
 
-const favorites = mongoose.model('favorites', favoritesSchema);
-module.exports = favorites;
+const Favorites = mongoose.model('Favorites', favoritesSchema);
+module.exports = Favorites;

@@ -4,19 +4,15 @@ const Schema = mongoose.Schema;
 const movieSchema = new Schema({
     Title: {
         type: String,
-
     },
     Year: {
         type: String,
-
     },
     Rated: {
         type: String,
-
     },
     Genre: {
         type: String,
-
     },
     Director: {
         type: String
@@ -68,8 +64,14 @@ const movieSchema = new Schema({
     },
     Entertainment: {
         type: String
+    },
+    Youtube: {
+        type: String
+    },
+    Number: {
+        type: String
     }
 });
 
-const movie = mongoose.model('movie', movieSchema);
-module.exports = movie;
+const Movie = mongoose.model('Movie', movieSchema);
+module.exports = Movie;

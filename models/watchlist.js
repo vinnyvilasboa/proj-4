@@ -4,19 +4,15 @@ const Schema = mongoose.Schema;
 const watchlistSchema = new Schema({
     Title: {
         type: String,
-
     },
     Year: {
         type: String,
-
     },
     Rated: {
         type: String,
-
     },
     Genre: {
         type: String,
-
     },
     Director: {
         type: String
@@ -75,5 +71,5 @@ const watchlistSchema = new Schema({
     }
 });
 
-const watchlist = mongoose.model('watchlist', watchlistSchema);
-module.exports = watchlist;
+const Watchlist = mongoose.model('Watchlist', watchlistSchema);
+module.exports = Watchlist;
