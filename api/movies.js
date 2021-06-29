@@ -6,17 +6,17 @@ const passport = require('passport');
 
 
 // Models
-const { movie } = require('../models');
+const { Movie } = require('../models');
 
 // Controllers
 const index = async(req, res) => {
-    console.log('inside of /api/movie');
+    console.log('inside of /api/movies');
     try {
-        const allmovie = await movie.find({});
+        const allmovie = await Movie.find({});
 
         res.json({ favorites: allmovie });
     } catch (error) {
-        console.log('Error inside of /api/movie');
+        console.log('Error inside of /api/movies');
         console.log(error);
         return res.status(400).json({ message: 'movie not found. Please try again.' });
     }
@@ -25,13 +25,13 @@ const index = async(req, res) => {
 const show = async(req, res) => {
     const { id } = req.params;
     try {
-        // look for book based on id
-        const movie = await movie.findById(id);
+        // look for movie based on id
+        const movie = await Movie.findById(id);
         res.json({ movie });
     } catch (error) {
-        console.log('Error inside of /api/movie/:id');
+        console.log('Error inside of /api/movies/:id');
         console.log(error);
-        return res.status(400).json({ message: 'Book not found. Try again...' });
+        return res.status(400).json({ message: 'Movie not found. Try again...' });
     }
 }
 
@@ -39,11 +39,11 @@ const create = async(req, res) => {
     const { title, year, rated, genre } = req.body;
 
     try {
-        const newmovie = await movie.create({ title, year, rated, genre });
-        console.log('new favorite created', newmovie);
-        res.json({ favorites: newmovie });
+        const newMovie = await Movie.create({ title, year, rated, genre });
+        console.log('new favorite created', newMovie);
+        res.json({ favorites: newMovie });
     } catch (error) {
-        console.log('Error inside of POST of /api/movie');
+        console.log('Error inside of POST of /api/movies');
         console.log(error);
         return res.status(400).json({ message: 'movie was not added. Please try again...' });
     }
@@ -52,25 +52,13 @@ const create = async(req, res) => {
 const update = async(req, res) => {
     console.log(req.body);
     try {
-        // const book = await Book.findOne({ title: req.body.title });
-        // console.log(book);
+        const updatedMovie = await Movie.update({ title: req.body.title }, req.body); // updating the movie
+        const movie = await Movie.findOne({ title: req.body.title });
 
-        // book.author = req.body.author;
-        // book.pages = req.body.pages;
-        // book.isbn = req.body.isbn;
-        // book.genre = req.body.genre;
-        // book.price = req.body.price;
-
-        // // save the new book info
-        // const savedBook = await book.save();
-
-        const updatedmovie = await movie.update({ title: req.body.title }, req.body); // updating the book
-        const movie = await movie.findOne({ title: req.body.title });
-
-        console.log(updatedmovie); // { n: 1, nModified: 0, ok: 1 }
+        console.log(updatedMovie); // { n: 1, nModified: 0, ok: 1 }
         console.log(movie); // a book object 
 
-        res.redirect(`/api/movie/${movie.id}`);
+        res.redirect(`/api/movies/${movie.id}`);
 
     } catch (error) {
         console.log('Error inside of UPDATE route');
@@ -83,9 +71,9 @@ const deleteMovie = async(req, res) => {
     const { id } = req.params;
     try {
         console.log(id);
-        const result = await movie.findByIdAndRemove(id);
+        const result = await Movie.findByIdAndRemove(id);
         console.log(result);
-        res.redirect('/api/movie');
+        res.redirect('/api/movies');
     } catch (error) {
         console.log('inside of DELETE route');
         console.log(error);
@@ -93,20 +81,20 @@ const deleteMovie = async(req, res) => {
     }
 }
 
-// GET api/books/test (Public)
+// GET api/movies/test (Public)
 router.get('/test', (req, res) => {
     res.json({ msg: 'movie endpoint OK!' });
 });
 
-// GET -> /api/books/
+// GET -> /api/movies/
 router.get('/', passport.authenticate('jwt', { session: false }), index);
-// GET -> /api/books/:id
+// GET -> /api/movies/:id
 router.get('/:id', passport.authenticate('jwt', { session: false }), show);
-// POST -> /api/books
+// POST -> /api/movies
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 // PUT -> /api/books
 router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/books/:id
+// DELETE => /api/movies/:id
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteMovie);
 
 module.exports = router;

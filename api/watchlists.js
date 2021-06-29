@@ -6,30 +6,30 @@ const passport = require('passport');
 
 
 // Models
-const { watchlist } = require('../models');
+const { Watchlist } = require('../models');
 
 // Controllers
 const index = async(req, res) => {
     console.log('inside of /api/watchlist');
     try {
-        const allwatchlist = await watchlist.find({});
+        const allwatchlist = await Watchlist.find({});
 
-        res.json({ watchlist: allwatchlist });
+        res.json({ watchlists: allwatchlist });
     } catch (error) {
-        console.log('Error inside of /api/watchlist');
+        console.log('Error inside of /api/watchlists');
         console.log(error);
-        return res.status(400).json({ message: 'watchlist not found. Please try again.' });
+        return res.status(400).json({ message: 'watchlists not found. Please try again.' });
     }
 }
 
 const show = async(req, res) => {
     const { id } = req.params;
     try {
-        // look for book based on id
-        const watchlist = await watchlist.findById(id);
+        // look for watchlist title based on id
+        const watchlist = await Watchlist.findById(id);
         res.json({ watchlist });
     } catch (error) {
-        console.log('Error inside of /api/watchlist/:id');
+        console.log('Error inside of /api/watchlists/:id');
         console.log(error);
         return res.status(400).json({ message: 'watchlist not found. Try again...' });
     }
@@ -39,9 +39,9 @@ const create = async(req, res) => {
     const { title, year, rated, genre } = req.body;
 
     try {
-        const newwatchlist = await watchlist.create({ title, year, rated, genre });
+        const newwatchlist = await Watchlist.create({ title, year, rated, genre });
         console.log('new watchlist created', newwatchlist);
-        res.json({ watchlist: newwatchlist });
+        res.json({ Watchlist: newwatchlist });
     } catch (error) {
         console.log('Error inside of POST of /api/watchlist');
         console.log(error);
@@ -64,13 +64,13 @@ const update = async(req, res) => {
         // // save the new book info
         // const savedBook = await book.save();
 
-        const updatedfavorites = await watchlist.update({ title: req.body.title }, req.body); // updating the book
-        const watchlist = await watchlist.findOne({ title: req.body.title });
+        const updatedfavorites = await Watchlist.update({ title: req.body.title }, req.body); // updating the book
+        const watchlist = await Watchlist.findOne({ title: req.body.title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
-        console.log(watchlist); // a book object 
+        console.log(Watchlist); // a movie object 
 
-        res.redirect(`/api/watchlist/${watchlist.id}`);
+        res.redirect(`/api/watchlists/${Watchlist.id}`);
 
     } catch (error) {
         console.log('Error inside of UPDATE route');
@@ -83,9 +83,9 @@ const deletewatchlist = async(req, res) => {
     const { id } = req.params;
     try {
         console.log(id);
-        const result = await watchlist.findByIdAndRemove(id);
+        const result = await Watchlist.findByIdAndRemove(id);
         console.log(result);
-        res.redirect('/api/watchlist');
+        res.redirect('/api/watchlists');
     } catch (error) {
         console.log('inside of DELETE route');
         console.log(error);
@@ -93,20 +93,20 @@ const deletewatchlist = async(req, res) => {
     }
 }
 
-// GET api/books/test (Public)
+// GET api/watchlists/test (Public)
 router.get('/test', (req, res) => {
     res.json({ msg: 'watchlist endpoint OK!' });
 });
 
-// GET -> /api/books/
+// GET -> /api/watchlists/
 router.get('/', passport.authenticate('jwt', { session: false }), index);
-// GET -> /api/books/:id
+// GET -> /api/watchlists/:id
 router.get('/:id', passport.authenticate('jwt', { session: false }), show);
-// POST -> /api/books
+// POST -> /api/watchlists
 router.post('/', passport.authenticate('jwt', { session: false }), create);
-// PUT -> /api/books
+// PUT -> /api/watchlists
 router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/books/:id
+// DELETE => /api/watchlists/:id
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deletewatchlist);
 
 module.exports = router;

@@ -21,14 +21,14 @@ db.on('error', (error) => {
 
 // Import all of your models
 const User = require('./User');
-const favorites = require('./favorites');
-const movie = require('./movie');
-const watchlist = require('./watchlist');
+const Favorite = require('./Favorite');
+const Movie = require('./Movie');
+const Watchlist = require('./Watchlist');
 
 // export all the models from this file
 module.exports = {
     User,
-    favorites,
-    movie,
-    watchlist
+    Favorite,
+    Movie,
+    Watchlist
 }
