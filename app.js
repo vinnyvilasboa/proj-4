@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 8000;
 // API
 const users = require('./api/users');
 const favorites = require('./api/favorites');
-const movies = require('./api/movies');
-const watchlists = require('./api/watchlists');
+const movie = require('./api/movie');
+const watchlist = require('./api/watchlist');
 
 // Middleware
 app.use(cors());
@@ -29,9 +29,9 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/users', users);
-app.use('/api/movies', movies);
+app.use('/api/movie', movie);
 app.use('/api/favorites', favorites);
-app.use('/api/watchlists', watchlists);
+app.use('/api/watchlist', watchlist);
 
 
 app.get('/*', (req, res) => {
