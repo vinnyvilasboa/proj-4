@@ -53,7 +53,7 @@ const update = async(req, res) => {
     console.log(req.body);
     try {
 
-        const updatedfavorites = await favorites.update({ title: req.body.title }, req.body); // updating the book
+        const updatedfavorites = await favorites.update({ title: req.body.title }, req.body); // updating the favorites
         const favorites = await favorites.findOne({ title: req.body.title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
