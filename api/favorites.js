@@ -57,7 +57,7 @@ const update = async(req, res) => {
         const favorites = await favorites.findOne({ title: req.body.title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
-        console.log(favorites); // a book object 
+        console.log(favorites); // a favorite object 
 
         res.redirect(`/api/favorites/${favorites.id}`);
 
@@ -82,9 +82,8 @@ const deleteFavorite = async(req, res) => {
     }
 }
 
-// GET api/books/test (Public)
-router.get('/test', (req, res) => {
-    res.json({ msg: 'favorites endpoint OK!' });
+// GET api/favorite/test (Public)
+router.get('/test', (req, res) => {res.json({ msg: 'favorites endpoint OK!' });
 });
 
 // GET -> /api/favorites/

@@ -7,14 +7,15 @@ const passport = require('passport');
 
 // Models
 const { Movie } = require('../models');
+const { route } = require('./watchlists');
 
 // Controllers
 const index = async(req, res) => {
     console.log('inside of /api/movies');
     try {
-        const allmovie = await Movie.find({});
+        const allmovies = await Movie.find({});
 
-        res.json({ favorites: allmovie });
+        res.json({ movies: allmovies });
     } catch (error) {
         console.log('Error inside of /api/movies');
         console.log(error);
@@ -24,6 +25,7 @@ const index = async(req, res) => {
 
 const show = async(req, res) => {
     const { id } = req.params;
+    console.log(req.query)
     try {
         // look for movie based on id
         const movie = await Movie.findById(id);
@@ -46,6 +48,21 @@ const create = async(req, res) => {
         console.log('Error inside of POST of /api/movies');
         console.log(error);
         return res.status(400).json({ message: 'movie was not added. Please try again...' });
+    }
+}
+
+const search = async(req, res) => {
+    const { Title } = req.body;
+    console.log('movie search', Title);
+
+    try {
+        const searchMovie = await Movie.findOne({ Title })
+        console.log(searchMovie);
+        res.json({ movies: searchMovie });
+    } catch (error) {
+        console.log('Error inside of POST of /api/movies');
+        console.log(error);
+        return res.status(400).json({ message: 'movie was not found. Please try again...' });
     }
 }
 
@@ -86,13 +103,16 @@ router.get('/test', (req, res) => {
     res.json({ msg: 'movie endpoint OK!' });
 });
 
+
 // GET -> /api/movies/
 router.get('/', passport.authenticate('jwt', { session: false }), index);
 // GET -> /api/movies/:id
 router.get('/:id', passport.authenticate('jwt', { session: false }), show);
+// POST -> /api/search
+router.post('/search',passport.authenticate('jwt', { session: false }), search)
 // POST -> /api/movies
 router.post('/', passport.authenticate('jwt', { session: false }), create);
-// PUT -> /api/books
+// PUT -> /api/movies
 router.put('/', passport.authenticate('jwt', { session: false }), update);
 // DELETE => /api/movies/:id
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteMovie);
