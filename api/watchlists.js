@@ -35,10 +35,10 @@ const show = async(req, res) => {
 }
 
 const create = async(req, res) => {
-    const { title, year, rated, genre } = req.body;
+    const { Title, Poster } = req.body;
 
     try {
-        const newwatchlist = await Watchlist.create({ title, year, rated, genre });
+        const newwatchlist = await Watchlist.create({ Title, Poster });
         console.log('new watchlist created', newwatchlist);
         res.json({ Watchlist: newwatchlist });
     } catch (error) {
@@ -48,24 +48,24 @@ const create = async(req, res) => {
     }
 }
 
-const update = async(req, res) => {
-    console.log(req.body);
-    try {
+// const update = async(req, res) => {
+//     console.log(req.body);
+//     try {
 
-        const updatedfavorites = await Watchlist.update({ title: req.body.title }, req.body); // updating the watchlist
-        const watchlist = await Watchlist.findOne({ title: req.body.title });
+//         const updatedfavorites = await Watchlist.update({ title: req.body.title }, req.body); // updating the watchlist
+//         const watchlist = await Watchlist.findOne({ title: req.body.title });
 
-        console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
-        console.log(Watchlist); // a movie object 
+//         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
+//         console.log(Watchlist); // a movie object 
 
-        res.redirect(`/api/watchlists/${Watchlist.id}`);
+//         res.redirect(`/api/watchlists/${Watchlist.id}`);
 
-    } catch (error) {
-        console.log('Error inside of UPDATE route');
-        console.log(error);
-        return res.status(400).json({ message: 'watchlist could not be updated. Please try again...' });
-    }
-}
+//     } catch (error) {
+//         console.log('Error inside of UPDATE route');
+//         console.log(error);
+//         return res.status(400).json({ message: 'watchlist could not be updated. Please try again...' });
+//     }
+// }
 
 const deletewatchlist = async(req, res) => {
     const { id } = req.params;
@@ -93,7 +93,7 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/watchlists
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 // PUT -> /api/watchlists
-router.put('/', passport.authenticate('jwt', { session: false }), update);
+// router.put('/', passport.authenticate('jwt', { session: false }), update);
 // DELETE => /api/watchlists/:id
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deletewatchlist);
 

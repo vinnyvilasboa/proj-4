@@ -36,10 +36,10 @@ const show = async(req, res) => {
 }
 
 const create = async(req, res) => {
-    const { title, year, rated, genre } = req.body;
+    const { Comment } = req.body;
 
     try {
-        const newfavorites = await favorites.create({ title, year, rated, genre });
+        const newfavorites = await favorites.create({ Comment });
         console.log('new favorite created', newfavorites);
         res.json({ favorites: newfavorites });
     } catch (error) {
@@ -53,8 +53,8 @@ const update = async(req, res) => {
     console.log(req.body);
     try {
 
-        const updatedfavorites = await favorites.update({ title: req.body.title }, req.body); // updating the favorites
-        const favorites = await favorites.findOne({ title: req.body.title });
+        const updatedfavorites = await favorites.update({ Comment: req.body.Comment }, req.body); // updating the favorites
+        const favorites = await favorites.findOne({ Title: req.body.Title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
         console.log(favorites); // a favorite object 
@@ -83,7 +83,8 @@ const deleteFavorite = async(req, res) => {
 }
 
 // GET api/favorite/test (Public)
-router.get('/test', (req, res) => {res.json({ msg: 'favorites endpoint OK!' });
+router.get('/test', (req, res) => {
+    res.json({ msg: 'favorites endpoint OK!' });
 });
 
 // GET -> /api/favorites/
