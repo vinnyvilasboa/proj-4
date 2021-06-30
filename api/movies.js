@@ -73,7 +73,7 @@ const update = async(req, res) => {
         const movie = await Movie.findOne({ title: req.body.title });
 
         console.log(updatedMovie); // { n: 1, nModified: 0, ok: 1 }
-        console.log(movie); // a book object 
+        console.log(movie); // a movie object 
 
         res.redirect(`/api/movies/${movie.id}`);
 
