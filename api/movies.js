@@ -7,7 +7,6 @@ const passport = require('passport');
 
 // Models
 const { Movie } = require('../models');
-// const { route } = require('./watchlists');
 
 // Controllers
 const index = async(req, res) => {
@@ -109,8 +108,8 @@ router.get('/', passport.authenticate('jwt', { session: false }), index);
 // GET -> /api/movies/:id
 router.get('/:id', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/search
-router.post('/search',passport.authenticate('jwt', { session: false }), search)
-// POST -> /api/movies
+router.post('/search', passport.authenticate('jwt', { session: false }), search)
+    // POST -> /api/movies
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 // PUT -> /api/movies
 router.put('/', passport.authenticate('jwt', { session: false }), update);

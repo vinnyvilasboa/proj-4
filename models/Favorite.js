@@ -5,65 +5,11 @@ const favoritesSchema = new Schema({
     Title: {
         type: String,
     },
-    Year: {
+    Comment: {
         type: String,
-    },
-    Rated: {
-        type: String,
-    },
-    Genre: {
-        type: String,
-    },
-    Director: {
-        type: String
-    },
-    Writer: {
-        type: String
-    },
-    Actors: {
-        type: String
-    },
-    Plot: {
-        type: String
-    },
-    Language: {
-        type: String
-    },
-    Country: {
-        type: String
-    },
-    Awards: {
-        type: String
     },
     Poster: {
-        type: String
-    },
-    Metascore: {
-        type: String
-    },
-    imdbRating: {
-        type: String
-    },
-    imdbVotes: {
-        type: String
-    },
-    imdbID: {
-        type: String
-    },
-    Type: {
-        type: String
-    },
-    DVD: {
-        type: String
-    },
-    BoxOffice: {
-        type: String
-    },
-    Production: {
-        type: String
-    },
-    Entertainment: {
-        type: String
+        type: String,
     },
     userSchema: {
         type: Schema.Types.ObjectId,
