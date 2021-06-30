@@ -7,7 +7,7 @@ const passport = require('passport');
 
 // Models
 const { Movie } = require('../models');
-const { route } = require('./watchlists');
+// const { route } = require('./watchlists');
 
 // Controllers
 const index = async(req, res) => {
