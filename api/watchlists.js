@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-
 // Models
 const { Watchlist } = require('../models');
 
@@ -52,19 +51,8 @@ const create = async(req, res) => {
 const update = async(req, res) => {
     console.log(req.body);
     try {
-        // const book = await Book.findOne({ title: req.body.title });
-        // console.log(book);
 
-        // book.author = req.body.author;
-        // book.pages = req.body.pages;
-        // book.isbn = req.body.isbn;
-        // book.genre = req.body.genre;
-        // book.price = req.body.price;
-
-        // // save the new book info
-        // const savedBook = await book.save();
-
-        const updatedfavorites = await Watchlist.update({ title: req.body.title }, req.body); // updating the book
+        const updatedfavorites = await Watchlist.update({ title: req.body.title }, req.body); // updating the watchlist
         const watchlist = await Watchlist.findOne({ title: req.body.title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
