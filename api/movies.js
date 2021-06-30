@@ -36,19 +36,19 @@ const show = async(req, res) => {
     }
 }
 
-const create = async(req, res) => {
-    const { title, year, rated, genre } = req.body;
+// const create = async(req, res) => {
+//     const { title, year, rated, genre } = req.body;
 
-    try {
-        const newMovie = await Movie.create({ title, year, rated, genre });
-        console.log('new favorite created', newMovie);
-        res.json({ favorites: newMovie });
-    } catch (error) {
-        console.log('Error inside of POST of /api/movies');
-        console.log(error);
-        return res.status(400).json({ message: 'movie was not added. Please try again...' });
-    }
-}
+//     try {
+//         const newMovie = await Movie.create({ title, year, rated, genre });
+//         console.log('new favorite created', newMovie);
+//         res.json({ favorites: newMovie });
+//     } catch (error) {
+//         console.log('Error inside of POST of /api/movies');
+//         console.log(error);
+//         return res.status(400).json({ message: 'movie was not added. Please try again...' });
+//     }
+// }
 
 const search = async(req, res) => {
     const { Title } = req.body;
@@ -65,37 +65,37 @@ const search = async(req, res) => {
     }
 }
 
-const update = async(req, res) => {
-    console.log(req.body);
-    try {
-        const updatedMovie = await Movie.update({ title: req.body.title }, req.body); // updating the movie
-        const movie = await Movie.findOne({ title: req.body.title });
+// const update = async(req, res) => {
+//     console.log(req.body);
+//     try {
+//         const updatedMovie = await Movie.update({ title: req.body.title }, req.body); // updating the movie
+//         const movie = await Movie.findOne({ title: req.body.title });
 
-        console.log(updatedMovie); // { n: 1, nModified: 0, ok: 1 }
-        console.log(movie); // a movie object 
+//         console.log(updatedMovie); // { n: 1, nModified: 0, ok: 1 }
+//         console.log(movie); // a movie object 
 
-        res.redirect(`/api/movies/${movie.id}`);
+//         res.redirect(`/api/movies/${movie.id}`);
 
-    } catch (error) {
-        console.log('Error inside of UPDATE route');
-        console.log(error);
-        return res.status(400).json({ message: 'movie could not be updated. Please try again...' });
-    }
-}
+//     } catch (error) {
+//         console.log('Error inside of UPDATE route');
+//         console.log(error);
+//         return res.status(400).json({ message: 'movie could not be updated. Please try again...' });
+//     }
+// }
 
-const deleteMovie = async(req, res) => {
-    const { id } = req.params;
-    try {
-        console.log(id);
-        const result = await Movie.findByIdAndRemove(id);
-        console.log(result);
-        res.redirect('/api/movies');
-    } catch (error) {
-        console.log('inside of DELETE route');
-        console.log(error);
-        return res.status(400).json({ message: 'movie was not deleted. Please try again...' });
-    }
-}
+// const deleteMovie = async(req, res) => {
+//     const { id } = req.params;
+//     try {
+//         console.log(id);
+//         const result = await Movie.findByIdAndRemove(id);
+//         console.log(result);
+//         res.redirect('/api/movies');
+//     } catch (error) {
+//         console.log('inside of DELETE route');
+//         console.log(error);
+//         return res.status(400).json({ message: 'movie was not deleted. Please try again...' });
+//     }
+// }
 
 // GET api/movies/test (Public)
 router.get('/test', (req, res) => {
