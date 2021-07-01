@@ -66,7 +66,7 @@ const update = async (req, res) => {
       console.log(updatedProfile);
       console.log(profile);
       res.json({ [profile]: updatedProfile });
-    //   res.redirect(`/api/profiles/${req.params.id}`);
+      res.redirect(`/api/profiles/${req.params.id}`);
     } catch (error) {
       console.log("Error inside of UPDATE route");
       console.log(error);
