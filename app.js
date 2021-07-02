@@ -11,7 +11,6 @@ const users = require('./api/users');
 const favorites = require('./api/favorites');
 const movies = require('./api/movies');
 const watchlists = require('./api/watchlists');
-const profiles = require('./api/profiles');
 // Middleware
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
@@ -32,8 +31,6 @@ app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/favorites', favorites);
 app.use('/api/watchlists', watchlists);
-app.use('/api/profiles', profiles);
-
 
 app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
