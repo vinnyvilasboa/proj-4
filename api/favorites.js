@@ -12,8 +12,8 @@ const { Favorite } = require('../models');
 const index = async(req, res) => {
     console.log('inside of /api/favorites');
     try {
-        const allfavorites = await favorites.find({});
-
+        const allfavorites = await Favorite.find({});
+        //req.user.id inside find
         res.json({ favorites: allfavorites });
     } catch (error) {
         console.log('Error inside of /api/favorites');
@@ -36,10 +36,10 @@ const show = async(req, res) => {
 }
 
 const create = async(req, res) => {
-    const { Comment } = req.body;
+    const { Comment, UserId, Title, Poster } = req.body;
 
     try {
-        const newfavorites = await favorites.create({ Comment });
+        const newfavorites = await Favorite.create({ Comment, UserId, Title, Poster });
         console.log('new favorite created', newfavorites);
         res.json({ favorites: newfavorites });
     } catch (error) {
