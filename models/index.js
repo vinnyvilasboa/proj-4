@@ -23,7 +23,6 @@ db.on('error', (error) => {
 const User = require('./User');
 const Favorite = require('./Favorite');
 const Movie = require('./Movie');
-const Profile = require('./Profile');
 const Watchlist = require('./Watchlist');
 
 // export all the models from this file
@@ -31,6 +30,5 @@ module.exports = {
     User,
     Favorite,
     Movie,
-    Profile,
     Watchlist
 }
