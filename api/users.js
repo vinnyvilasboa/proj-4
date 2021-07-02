@@ -108,6 +108,22 @@ const login = async (req, res) => {
     }
 }
 
+const update = async (req, res) => {
+        console.log(req.body);
+    try {
+      const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
+      const user = await User.findById(req.params.id);
+      console.log(updatedUser);
+      console.log(user);
+    //   res.json({ [user]: updatedUser });
+    //   res.redirect(`/api/users`);
+    } catch (error) {
+      console.log("Error inside of UPDATE route");
+      console.log(error);
+      res.status(400).json({ message: "User could not be updated. Please try again..." });
+    }
+  };
+
 const profile = async (req, res) => {
     console.log('Inside of PROFILE route');
     res.json({
@@ -120,7 +136,8 @@ const profile = async (req, res) => {
 // routes
 // GET -> /api/users/test
 router.get('/test', test);
-
+// Put
+router.put("/:id", passport.authenticate("jwt", { session: false }), update);
 // POST -> api/users/signup (Public)
 router.post('/signup', signup);
 
