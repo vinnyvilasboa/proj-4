@@ -109,14 +109,14 @@ const login = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    //     console.log(req.body);
+        console.log(req.body);
     try {
       const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
       const user = await User.findById(req.params.id);
       console.log(updatedUser);
       console.log(user);
-    //   res.json({ [user]: updatedUser });
-      res.redirect(`/api/users/${user.id}`);
+      res.json({ [user]: updatedUser });
+      res.redirect(`/api/users/${profile.id}`);
     } catch (error) {
       console.log("Error inside of UPDATE route");
       console.log(error);
