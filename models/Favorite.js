@@ -11,11 +11,11 @@ const favoritesSchema = new Schema({
     Poster: {
         type: String,
     },
-    userSchema: {
+    UserId: {
         type: Schema.Types.ObjectId,
-        ref: 'User Schema '
+        ref: 'user'
     }
 });
 
-const Favorites = mongoose.model('Favorites', favoritesSchema);
-module.exports = Favorites;
+const Favorite = mongoose.model('Favorite', favoritesSchema);
+module.exports = Favorite;

@@ -36,6 +36,7 @@ const show = async(req, res) => {
 }
 
 const create = async(req, res) => {
+
     const { Title, Year, Rated, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Metascore, imdbRating, imdbVotes, Type, DVD, BoxOffice, Production, Entertainment, Youtube, Num } = req.body;
 
     try {
@@ -65,6 +66,7 @@ const create = async(req, res) => {
         });
         console.log('new movie created', newMovie);
         res.json({ movies: newMovie });
+
     } catch (error) {
         console.log('Error inside of POST of /api/movies');
         console.log(error);
@@ -90,8 +92,10 @@ const search = async(req, res) => {
 const update = async(req, res) => {
     console.log(req.body);
     try {
+
         const updatedMovie = await Movie.findByIdAndUpdate( req.params.id, req.body); // updating the movie
         const movie = await Movie.findById(req.params.id);
+
 
         console.log(updatedMovie); // { n: 1, nModified: 0, ok: 1 }
         console.log(movie); // a movie object 
