@@ -53,8 +53,8 @@ const update = async(req, res) => {
     console.log(req.body);
     try {
 
-        const updatedfavorites = await favorites.update({ Comment: req.body.Comment }, req.body); // updating the favorites
-        const favorites = await favorites.findOne({ Title: req.body.Title });
+        const updatedfavorites = await Favorite.update({ Comment: req.body.Comment }, req.body); // updating the favorites
+        const favorites = await Favorite.findOne({ Title: req.body.Title });
 
         console.log(updatedfavorites); // { n: 1, nModified: 0, ok: 1 }
         console.log(favorites); // a favorite object 
@@ -72,7 +72,7 @@ const deleteFavorite = async(req, res) => {
     const { id } = req.params;
     try {
         console.log(id);
-        const result = await Favorites.findByIdAndRemove(id);
+        const result = await Favorite.findByIdAndRemove(id);
         console.log(result);
         res.redirect('/api/favorites');
     } catch (error) {
