@@ -68,7 +68,7 @@ const movieSchema = new Schema({
     Youtube: {
         type: String
     },
-    Number: {
+    Num: {
         type: String
     }
 });

@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-
 // Models
 const { Favorite } = require('../models');
 
@@ -95,7 +94,7 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), show);
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 // PUT -> /api/favorites
 router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/books/:id
+// DELETE => /api/favorites/:id
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteFavorite);
 
 module.exports = router;
