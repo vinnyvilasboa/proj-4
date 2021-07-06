@@ -11,7 +11,9 @@ const { Favorite } = require('../models');
 const index = async(req, res) => {
     console.log('inside of /api/favorites');
     try {
-        const allfavorites = await Favorite.find({_id:req.user.id});
+        const allfavorites = await Favorite.find({UserId:req.user._id});
+        console.log(allfavorites)
+        // console.log(req.user._id)
         //req.user.id inside find
         res.json({ favorites: allfavorites });
     } catch (error) {
