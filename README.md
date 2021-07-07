@@ -1,7 +1,7 @@
-![Issues](https://img.shields.io/github/issues/jakeschultz89/Project-3-Backend)![Forks](https://img.shields.io/github/forks/jakeschultz89/Project-3-Backend)![Repo-Size](https://img.shields.io/github/repo-size/jakeschultz89/Project-3-Backend)![Contributors](https://img.shields.io/github/contributors/jakeschultz89/Project-3-Backend)![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+![Issues](https://img.shields.io/github/issues/vinnyvilasboa/proj-4)![Forks](https://img.shields.io/github/forks/vinnyvilasboa/proj-4)![Repo-Size](https://img.shields.io/github/repo-size/vinnyvilasboa/proj-4)![Contributors](https://img.shields.io/github/contributors/vinnyvilasboa/proj-4)
 
 
-
+<!-- ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge) -->
 
 Fakeflix-Backend is the backend of Fakeflix.
 
@@ -65,18 +65,65 @@ Run the command (mongod) first
 ```sh
 Then follow up with the (mongo) command in a seperate terminal window
 ```
-<!-- ![](https://media.giphy.com/media/JZd6XgaIkIUJMbuxUP/giphy.gif) -->
 
-<!-- ## Code Snippets to be Proud of 
+## Code Snippets to be proud of 
 
-![](https://i.imgur.com/ES6BDXv.png)
-> The above code snippet is something we are very proud of due to the fact that we went through alot of trial and error to get this to work. The purpose of the above function is to update a specific ```astro``` that has already been created, initially we used the ```update``` method and that didnt work because it only updated the first ```astro``` in the database instead of the one we tried to pull and update by the i.d.. Once we changed it to ```findByIDAndUpdate``` it fixed all of our problems but we defninently had to troubleshoot this for a few days but thankfully with some needed help we got it to work. -->
+```javaScript
+const data = [{
+    "Title": "The Shawshank Redemption",
+    "Year": "1994",
+    "Rated": "R",
+    "Genre": "Drama",
+    "Director": "Frank Darabont",
+    "Writer": "Stephen King, Frank Darabont",
+    "Actors": "Tim Robbins, Morgan Freeman, Bob Gunton",
+    "Plot": "Two imprisoned men bond over a Num of years, finding solace and eventual redemption through acts of common decency.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 7 Oscars. 21 wins & 43 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "Metascore": "80",
+    "imdbRating": "9.3",
+    "imdbVotes": "2,400,369",
+    "imdbID": "tt0111161",
+    "Type": "movie",
+    "DVD": "15 Aug 2008",
+    "BoxOffice": "$28,699,976",
+    "Production": "Columbia Pictures, Castle Rock Entertainment",
+    "Website": "N/A",
+    "Response": "True",
+    "Youtube": "https://www.youtube.com./watch?v=6hB3S9bIaco",
+    "Num": "0"
+}
+```
+
+This is a code snippet from the seed file that builds our database. We originally were going to link directly to the OMDB API but decided to build a "Top 100 IMDB Movies" list directly into our database instead. In this we included a youtube link because one of our stretch goals is to have the titles on the front end be linked to the youtube trailer for the movie as a way to give the site a bit of a "Netflix" feel where a user would normally be able to click to start the movie.
+
+```javaScript
+const search = async(req, res) => {
+    const { Title } = req.body;
+    console.log('movie search', Title);
+
+    try {
+        const searchMovie = await Movie.findOne({ Title })
+        console.log(searchMovie);
+        res.json({ movies: searchMovie });
+    } catch (error) {
+        console.log('Error inside of POST of /api/movies');
+        console.log(error);
+        return res.status(400).json({ message: 'movie was not found. Please try again...' });
+    }
+}
+```
+
+This snippet is one that, while not fully fleshed out to handle all inputs, it is one that will allow for users to search for a movie by title on the Fakeflix site.
 
 ## Schema Idea
 ![](wireframe.png)
-<!-- > Above is our thinking behind our schema's and how they connect the User schema is self explanitory it collects the information input by the user and saves it to the database, this schema connects to the ```Astros Scehma``` meaning a user can create an astro and conduct other things such as update and delete them. The other schemas are stactic data that we seeded into our databse from the Space-X-API ```https://github.com/r-spacex/SpaceX-API/tree/master/docs/v4```  -->
 
+This is our original wireframe for how we wanted the site to be laid out.
 
+<br>
 
 Verify the deployment by navigating to your server address in
 your preferred browser.
