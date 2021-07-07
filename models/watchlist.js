@@ -8,9 +8,13 @@ const watchlistSchema = new Schema({
     Poster: {
         type: String,
     },
-    userSchema: {
+    userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User Schema '
+        ref: 'user',
+    },
+    movieId: {
+        type: Schema.Types.ObjectId,
+        ref: 'movie'
     }
 });
 
