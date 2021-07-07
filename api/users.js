@@ -111,11 +111,12 @@ const login = async (req, res) => {
 const update = async (req, res) => {
         console.log(req.body);
     try {
-      const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
+      const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {returnOriginal: false});
       const user = await User.findById(req.params.id);
-      console.log(updatedUser);
-      console.log(user);
-    //   res.json({ [user]: updatedUser });
+    //   console.log(updatedUser);
+    //   console.log(user);
+      res.json({ user: updatedUser });
+    // res.send("this should return something")
     //   res.redirect(`/api/users`);
     } catch (error) {
       console.log("Error inside of UPDATE route");
@@ -135,6 +136,7 @@ const profile = async (req, res) => {
 
 // routes
 // GET -> /api/users/test
+// router.get('/test', test);
 router.get('/test', test);
 // Put
 router.put("/:id", passport.authenticate("jwt", { session: false }), update);
@@ -146,5 +148,7 @@ router.post('/login', login);
 
 // GET /api/users/profile (Private)
 router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
+
+router.put('/profile/:id', passport.authenticate('jwt', { session: false }), profile);
 
 module.exports = router;

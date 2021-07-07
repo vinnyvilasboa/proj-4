@@ -1,6 +1,7 @@
 # MERN Authentication `Backend`
 
 This is a code along for MERN Auth
+https://young-basin-22033.herokuapp.com/
 
 Notes:
 1. Set up server
